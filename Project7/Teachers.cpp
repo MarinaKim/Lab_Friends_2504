@@ -23,3 +23,25 @@ teacher::teacher(const teacher &obj) {
 	this->gender = obj.gender;
 	this->cafedra = obj.cafedra;
 }
+
+void print(teacher* ts, int size){
+	for (int i = 0;i < size;i++) {
+		cout << ts[i].name << ts[i].surname << ts[i].age << ts[i].cafedra << endl;
+	}}
+
+istream & operator >> (istream& in, teacher& obj) {
+	string s;
+	getline(in, s, '\n');
+	getline(in, obj.name, '\\');
+	getline(in, obj.surname, '\\');
+	in >> obj.age >>obj.gender;
+	getline(in, obj.cafedra, '\\');
+	return in;
+}
+
+bool operator==(teacher obj, string cafedra) {
+	return (obj.cafedra == cafedra);
+}
+bool operator>(teacher obj, teacher obj1) {
+	return (obj.age > obj1.age);
+}

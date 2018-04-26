@@ -24,6 +24,9 @@
     <ClCompile Include="Teachers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Students.h">
@@ -35,9 +38,15 @@
     <ClInclude Include="Library.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Exam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="in.txt">
+    <Text Include="students.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Teacher.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

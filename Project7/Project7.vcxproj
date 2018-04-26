@@ -111,17 +111,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Exam.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="Students.h" />
     <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Exam.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Teachers.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="in.txt" />
+    <Text Include="students.txt" />
+    <Text Include="Teacher.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
