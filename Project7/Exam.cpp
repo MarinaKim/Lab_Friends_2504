@@ -18,8 +18,8 @@ Exam::Exam(const Exam& obj) {
 	this->student_sname = obj.student_sname;
 	this->teacher_sname = obj.teacher_sname;
 	this->grade = obj.grade;
-
 }
+
 void Exam::create_exam(string Subject, Student sobj, teacher tobj, double grade) {
 	
 	this->subject = Subject;

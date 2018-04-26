@@ -45,6 +45,7 @@ int main() {
 		print(ts, n);
 	}break;
 
+		//test Exam
 	case 3: {
 		teacher *ts;
 		Student *ss;
