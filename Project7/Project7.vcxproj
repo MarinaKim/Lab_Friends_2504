@@ -123,6 +123,7 @@
     <ClCompile Include="Teachers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Exams.txt" />
     <Text Include="students.txt" />
     <Text Include="Teacher.txt" />
   </ItemGroup>

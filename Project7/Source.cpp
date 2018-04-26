@@ -52,6 +52,7 @@ int main() {
 		int sn,tn;
 		int i = 0;
 		fstream in_file("Teacher.txt");
+		ofstream out_file("Exams.txt");
 		in_file >> tn;
 		ts = new teacher[tn];
 		while (!in_file.eof()) {
@@ -88,11 +89,27 @@ int main() {
 				/*Exam e(subject, ss[j].getSname(), ts[i].getSname(), grade); //реализация по конструктору
 				es[k++] = e;*/
 				es[k++].create_exam(subject, ss[j], ts[i],grade); //реализация по методу
-			}
-		}
+			}}
 
 		cout << "Exam list:" << endl;
 		printExam(es, en);
+
+		int choice;
+		while (true) {
+			cout << "Choose a task: " << endl;
+			cout << "1- print girls:" << endl;
+			cout << "2- print boys:" << endl;
+
+			cout << "0-exit" << endl;
+			cin >> choice;
+			switch (choice)
+			{
+			case 1: {
+				for (int (i=0;i<sn;i++))
+
+			}	break;
+			}
+		}
 		delete[]ts;
 		delete[]ss;
 
