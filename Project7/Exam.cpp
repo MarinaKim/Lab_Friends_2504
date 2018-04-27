@@ -35,6 +35,18 @@ void printExam(Exam* es, int size) {
 		<< setw(7) << es[i].grade << endl;	}
 
 }
+
+void printExamen(Exam es) {
+	
+		cout << setw(35) << es.subject << setw(15)
+			<< es.student_sname
+			<< setw(15) << es.teacher_sname
+			<< setw(7) << es.grade << endl;
+}
+
+bool operator==(Exam obj, double gr) {
+	return (obj.grade == gr);
+}
 Exam:: ~Exam() {
 
 }

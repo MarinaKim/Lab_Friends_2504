@@ -36,9 +36,9 @@ void printStudents(Student *ss, int size) {
 	}
 }
 
-void printStudent(Student*s) {	
-		cout << s->name << "\t" << s->surname << "\t" << s->age << "\t" <<
-			s->gender << "\t" << s->group << endl;
+void printStudent(Student s) {	
+		cout << s.name << "\t" << s.surname << "\t" << s.age << "\t" <<
+			s.gender << "\t" << s.group << endl;
 }
 
 void operator >> (istream& in, Student &s) {
@@ -52,6 +52,11 @@ void operator >> (istream& in, Student &s) {
 bool operator==(string male, Student obj) {
 	return(male == obj.gender);
 }
+
+bool operator==(int group, Student obj) {
+	return(group == obj.group);
+}
+
 bool operator!=(string male, Student obj) {
 	return(male != obj.gender);
 }

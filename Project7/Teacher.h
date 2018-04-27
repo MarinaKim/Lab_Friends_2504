@@ -20,7 +20,9 @@ public:
 
 	friend istream & operator >> (istream& in, teacher& obj);
 	friend void print(teacher*, int size);
+	friend void printTeacher(teacher ts);
 	friend bool operator==(teacher, string cafedra);
 	friend bool operator>(teacher, teacher);
-	
+	friend bool operator<(teacher, teacher);
+		
 };

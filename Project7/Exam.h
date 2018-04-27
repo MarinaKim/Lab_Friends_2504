@@ -21,4 +21,7 @@ public:
 
 	//friend istream& operator >> (istream& in, );
 	friend void printExam(Exam*, int);
+	friend void printExamen(Exam es);
+
+	friend bool operator==(Exam obj, double gr);
 };

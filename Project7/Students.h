@@ -23,11 +23,12 @@ public:
 	friend class Exam;
 
 	friend void printStudents(Student*ss, int size);
-	friend void printStudent(Student*s);
+	friend void printStudent(Student s);
 	//перегружаем оператор ввода
 	friend void operator >> (istream& in, Student &s); // можно написать вместо istream void, т.к. Student передаем по ссылке и можем изменять сразу
 											   //istream подразумевает изменения внутри, но т.к. используем &, можно использовать void
 	friend bool operator==(string male, Student obj);
+	friend bool operator==(int group, Student obj);
 	friend bool operator!=(string male, Student obj);
 	friend bool operator>(int a, Student obj);
 	friend bool operator<(int a, Student obj);

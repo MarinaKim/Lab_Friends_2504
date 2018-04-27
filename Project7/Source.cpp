@@ -49,7 +49,7 @@ int main() {
 	case 3: {
 		teacher *ts;
 		Student *ss;
-		int sn,tn;
+		int sn, tn;
 		int i = 0;
 		fstream in_file("Teacher.txt");
 		ofstream out_file("Exams.txt");
@@ -61,7 +61,7 @@ int main() {
 		in_file.close();
 
 		in_file.open("students.txt");
-		in_file >>sn;
+		in_file >> sn;
 		i = 0;
 		ss = new Student[sn];
 		while (!in_file.eof()) {
@@ -72,7 +72,7 @@ int main() {
 		print(ts, tn);
 		cout << "\n Students:" << endl;
 		printStudents(ss, sn);
-		
+
 		int en = sn*tn;
 		Exam *es;
 		es = new Exam[en];
@@ -81,15 +81,16 @@ int main() {
 		double grade;
 		for (int i = 0;i < tn;i++) {
 			cout << "Enter subject for current teacher:" << endl;
-			cin >>subject;
-			
+			cin >> subject;
+
 			for (int j = 0;j < sn;j++) {
 				cout << "Enter grade for current student" << endl;
 				cin >> grade;
 				/*Exam e(subject, ss[j].getSname(), ts[i].getSname(), grade); //реализация по конструктору
 				es[k++] = e;*/
-				es[k++].create_exam(subject, ss[j], ts[i],grade); //реализация по методу
-			}}
+				es[k++].create_exam(subject, ss[j], ts[i], grade); //реализация по методу
+			}
+		}
 
 		cout << "Exam list:" << endl;
 		printExam(es, en);
@@ -104,10 +105,125 @@ int main() {
 			cin >> choice;
 			switch (choice)
 			{
+				//а) Студентов мужского пола
 			case 1: {
-				for (int (i=0;i<sn;i++))
+				for (int i = 0;i < sn;i++) {
+					if ("man" == ss[i])
+					{
+						printStudent(ss[i]);
+					}
+				}
 
 			}	break;
+				//б) Студентов женского пола
+			case 2: {
+				for (int i = 0;i < sn;i++) {
+					if ("woman" == ss[i])
+					{
+						printStudent(ss[i]);
+					}
+				}
+			}break;
+				//в) Вывести студентов по группам
+			case 3: {
+				int g;
+				cout << "which group(1,2):";
+				cin >> g;
+
+				cout << "Group " << g << endl;
+				for (int i = 0;i < sn;i++) {
+					if (g == ss[i])
+					{
+						printStudent(ss[i]);
+					}
+				}
+			}break;
+
+				//г) Самого молодого преподавателя
+			case 4: {
+				teacher min;
+				min = ts[0];
+				for (int i = 0;i < tn;i++) {
+					if (ts[i]<min)
+					{
+						min= ts[i];
+					}
+				}
+				cout << "Yonger teacher:" << endl;
+				printTeacher(min);
+			}break;
+
+				//д) Старшего преподавателя
+			case 5: {
+				teacher max;
+				max = ts[0];
+				for (int i = 0;i < tn;i++) {
+					if (ts[i] >max)
+					{
+						max=ts[i];
+					}
+				}
+				cout << "Older teacher:" << endl;
+				printTeacher(max);
+			}break;
+
+				//е) Вывести преподавателей по кафедрам
+			case 6: {
+				int c;
+				cout << "which cafedra:"<<endl;
+				cout << "1-Information Technology" << endl;
+				cout << "2-Philosophy" << endl;
+				cin >> c;
+				switch (c) {
+				case 1: {
+					cout << " Cafedra Information Technology:" <<endl;
+					
+					for (int i = 0;i < tn;i++) {
+					if (ts[i] == "Technology")
+					{
+						printTeacher(ts[i]);
+					}
+				}
+				}break;
+
+				case 2: {
+					cout << " Cafedra Philosophy:" << endl;
+					for (int i = 0;i < tn;i++) {
+						if (ts[i] == "Philosophy")
+						{
+							printTeacher(ts[i]);
+						}
+					}
+
+				}break;
+				}
+			}break;
+
+				//Список студентов, которые сдали экзамен на 5,
+				//у которого преподавателя и по какому предмету
+			case 7: {
+				double gr=5;
+				
+				for (int i = 0;i < en;i++) {
+					if (es[i] == gr) {
+						printExamen(es[i]);
+					}
+				}
+
+			}break;
+
+				//з) Список студентов, которые сдали экзамен на 2 и 
+				//меньше, у которого преподавателя и по какому предмету.
+			case 8: {
+				double gr = 2;
+
+				for (int i = 0;i < en;i++) {
+					if (es[i] == gr) {
+						printExamen(es[i]);
+					}
+				}
+			}break;
+
 			}
 		}
 		delete[]ts;

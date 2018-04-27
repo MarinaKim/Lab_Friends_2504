@@ -1,3 +1,5 @@
-2
-name1\ surname1\ 20 man 1
+4
+name1\ surname1\ 20 man 2
 name2\ surname2\ 25 woman 1
+name3\ surname3\ 25 man 1
+name4\ surname4\ 25 woman 2
