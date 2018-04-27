@@ -2,6 +2,7 @@
 #include "Teacher.h"
 
 int main() {
+	setlocale(LC_ALL, "Rus");
 	int num;
 	cout << "Enter num: ";
 	cin >> num;
@@ -94,13 +95,18 @@ int main() {
 
 		cout << "Exam list:" << endl;
 		printExam(es, en);
-
+		cout << "-----------------------------------------------------" << endl;
 		int choice;
 		while (true) {
 			cout << "Choose a task: " << endl;
 			cout << "1- print girls:" << endl;
 			cout << "2- print boys:" << endl;
-
+			cout << "3-Вывести студентов по группам" << endl;
+			cout << "4- Самого молодого преподавателя" << endl;
+			cout << "5-Старшего преподавателя" << endl;
+			cout << "6-Вывести преподавателей по кафедрам" << endl;
+			cout << "7-Список студентов, которые сдали экзамен на 5" << endl;
+			cout << "8-Список студентов, которые сдали экзамен на 2" << endl;
 			cout << "0-exit" << endl;
 			cin >> choice;
 			switch (choice)
@@ -113,7 +119,7 @@ int main() {
 						printStudent(ss[i]);
 					}
 				}
-
+				cout << "----------------------------------------------------" << endl;
 			}	break;
 				//б) Студентов женского пола
 			case 2: {
@@ -123,6 +129,8 @@ int main() {
 						printStudent(ss[i]);
 					}
 				}
+				cout << "----------------------------------------------------" << endl;
+
 			}break;
 				//в) Вывести студентов по группам
 			case 3: {
@@ -137,6 +145,8 @@ int main() {
 						printStudent(ss[i]);
 					}
 				}
+				cout << "----------------------------------------------------" << endl;
+
 			}break;
 
 				//г) Самого молодого преподавателя
@@ -151,6 +161,8 @@ int main() {
 				}
 				cout << "Yonger teacher:" << endl;
 				printTeacher(min);
+				cout << "----------------------------------------------------" << endl;
+
 			}break;
 
 				//д) Старшего преподавателя
@@ -165,6 +177,8 @@ int main() {
 				}
 				cout << "Older teacher:" << endl;
 				printTeacher(max);
+				cout << "----------------------------------------------------" << endl;
+
 			}break;
 
 				//е) Вывести преподавателей по кафедрам
@@ -184,6 +198,8 @@ int main() {
 						printTeacher(ts[i]);
 					}
 				}
+					cout << "----------------------------------------------------" << endl;
+
 				}break;
 
 				case 2: {
@@ -194,6 +210,7 @@ int main() {
 							printTeacher(ts[i]);
 						}
 					}
+					cout << "----------------------------------------------------" << endl;
 
 				}break;
 				}
@@ -209,6 +226,7 @@ int main() {
 						printExamen(es[i]);
 					}
 				}
+				cout << "----------------------------------------------------" << endl;
 
 			}break;
 
@@ -222,6 +240,8 @@ int main() {
 						printExamen(es[i]);
 					}
 				}
+				cout << "----------------------------------------------------" << endl;
+
 			}break;
 
 			}
